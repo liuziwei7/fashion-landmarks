@@ -5,14 +5,19 @@ function [ prediction ] = pipline_forword( img_orig, pipline)
     scale = 224 / max(size(img_orig));
     s1 = round(size(img_orig,1) *scale);
     s2 = round(size(img_orig,2) *scale);
-    img_resi = imresize(img_orig,[s1,s2]);
-    
-    pad = [224 224 0] - size(img_resi);
-    pad(pad<0) = 0;
-    
-    offset = floor(pad./2);
-    img_resi = padarray(img_resi, offset,'pre');
-    img_resi = padarray(img_resi, pad-offset,'post');
+    if size(img_orig,1) == 224 && size(img_orig,2) == 224
+        img_resi = img_orig;
+        offset = [0,0,0];
+    else
+        img_resi = imresize(img_orig,[s1,s2]);
+
+        pad = [224 224 0] - size(img_resi);
+        pad(pad<0) = 0;
+
+        offset = floor(pad./2);
+        img_resi = padarray(img_resi, offset,'pre');
+        img_resi = padarray(img_resi, pad-offset,'post');
+    end
     
     assert(size(img_resi,1) == 224);
     assert(size(img_resi,2) == 224);
