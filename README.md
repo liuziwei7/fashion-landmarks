@@ -4,7 +4,7 @@
 ## Overview
 It is the authors' implementation of the fashion landmark detector described in:  
 "Fashion Landmark Detection in the Wild"   
-[Ziwei Liu](http://personal.ie.cuhk.edu.hk/~lz013/), [Sijie Yan](), [Ping Luo](http://personal.ie.cuhk.edu.hk/~pluo/), [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/), [Xiaoou Tang](https://www.ie.cuhk.edu.hk/people/xotang.shtml)    
+[Ziwei Liu](http://personal.ie.cuhk.edu.hk/~lz013/), [Sijie Yan](), [Ping Luo](http://personal.ie.cuhk.edu.hk/~pluo/), [Xiaogang Wang](http://www.ee.cuhk.edu.hk/~xgwang/), [Xiaoou Tang](https://www.ie.cuhk.edu.hk/people/xotang.shtml) (The Chinese University of Hong Kong)   
 In European Conference on Computer Vision (ECCV) 2016
 
 <img src='./misc/demo_teaser.jpg' width=800>
@@ -27,9 +27,9 @@ matlab ./scripts/demo.m
 ```
 
 ## Model Zoo:
-* [FLD_upper_models.zip](https://drive.google.com/open?id=0B7EVK8r0v71pRTdiRHk3Sm9leXM): 3-stage cascaded CNN models trained on upper-body clothes of Fashion Landmark Detection Benchmark (FLD).
-* [FLD_lower_models.zip](https://drive.google.com/open?id=0B7EVK8r0v71pcWtON1YtRU5xMUk): 3-stage cascaded CNN models trained on lower-body clothes of Fashion Landmark Detection Benchmark (FLD).
-* [FLD_full_models.zip](https://drive.google.com/open?id=0B7EVK8r0v71pYnhhLXhVOWhTMEE): 3-stage cascaded CNN models trained on full-body clothes of Fashion Landmark Detection Benchmark (FLD).
+* [FLD_upper_models.zip](https://www.dropbox.com/s/goh8hxwhjy8ic4e/FLD_upper_models.zip?dl=0): 3-stage cascaded CNN models trained on upper-body clothes of Fashion Landmark Detection Benchmark (FLD).
+* [FLD_lower_models.zip](https://www.dropbox.com/s/2ke4ztvdzcif46o/FLD_lower_models.zip?dl=0): 3-stage cascaded CNN models trained on lower-body clothes of Fashion Landmark Detection Benchmark (FLD).
+* [FLD_full_models.zip](https://www.dropbox.com/s/hogv37vkpl4vb7z/FLD_full_models.zip?dl=0): 3-stage cascaded CNN models trained on full-body clothes of Fashion Landmark Detection Benchmark (FLD).
 
 ## Dataset
 [Large-scale Fashion (DeepFashion) Database](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html): [Fashion Landmark Detection Benchmark (FLD)](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/LandmarkDetection.html)
