@@ -1,6 +1,8 @@
 ## Fashion Landmark Detection in the Wild
 [[Project]](http://personal.ie.cuhk.edu.hk/~lz013/projects/FashionLandmarks.html) [[Paper]](https://arxiv.org/abs/1608.03049)   
 
+<img src='./misc/demo.gif' width=540>
+
 ## Overview
 It is the authors' implementation of the fashion landmark detector described in:  
 "Fashion Landmark Detection in the Wild"   
@@ -12,7 +14,7 @@ In European Conference on Computer Vision (ECCV) 2016
 Contact: Sijie Yan (yysijie@gmail.com) and Ziwei Liu (lz013@ie.cuhk.edu.hk)
 
 ## Getting started
-* Install and compile the [Caffe](https://github.com/BVLC/caffe) libraries.
+* Install and compile the [Caffe](https://github.com/BVLC/caffe) library.
 * Download the pre-trained models (See `Model Zoo` for details):
 ``` bash
 Place "*.caffemodel" into "./models/FLD_upper(or lower or full)/" 
