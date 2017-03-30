@@ -29,9 +29,9 @@ matlab ./scripts/demo.m
 ```
 
 ## Model Zoo:
-* [FLD_upper_models.zip](https://www.dropbox.com/s/goh8hxwhjy8ic4e/FLD_upper_models.zip?dl=0): 3-stage cascaded CNN models trained on upper-body clothes of Fashion Landmark Detection Benchmark (FLD).
-* [FLD_lower_models.zip](https://www.dropbox.com/s/2ke4ztvdzcif46o/FLD_lower_models.zip?dl=0): 3-stage cascaded CNN models trained on lower-body clothes of Fashion Landmark Detection Benchmark (FLD).
-* [FLD_full_models.zip](https://www.dropbox.com/s/hogv37vkpl4vb7z/FLD_full_models.zip?dl=0): 3-stage cascaded CNN models trained on full-body clothes of Fashion Landmark Detection Benchmark (FLD).
+* [FLD_upper_models.zip](https://drive.google.com/open?id=0B7EVK8r0v71pa1BTRnJSaEI3a2c): 3-stage cascaded CNN models trained on upper-body clothes of Fashion Landmark Detection Benchmark (FLD).
+* [FLD_lower_models.zip](https://drive.google.com/open?id=0B7EVK8r0v71pMmpXbDY5R3hkUFU): 3-stage cascaded CNN models trained on lower-body clothes of Fashion Landmark Detection Benchmark (FLD).
+* [FLD_full_models.zip](https://drive.google.com/open?id=0B7EVK8r0v71pTlpsZENTRHg2ZW8): 3-stage cascaded CNN models trained on full-body clothes of Fashion Landmark Detection Benchmark (FLD).
 
 ## Dataset
 [Large-scale Fashion (DeepFashion) Database](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html): [Fashion Landmark Detection Benchmark (FLD)](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/LandmarkDetection.html)
