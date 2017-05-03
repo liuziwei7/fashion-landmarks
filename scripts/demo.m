@@ -1,19 +1,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % step1:
 % use
-%     pipline = pipline_init('upper');
-% for initiating a fashion landmark detection pipline
+%     pipeline = pipeline_init('upper');
+% for initiating a fashion landmark detection pipeline
 % 
 % step2:
 % use
-%     prediction = pipline_forword(img,pipline);
+%     prediction = pipeline_forword(img,pipeline);
 % for getting landmarks of images
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% initiate pipline
+% initiate pipeline
 addpath(genpath('../caffe/matlab'));
-pipline = pipline_init('upper');
+pipeline = pipeline_init('upper');
 
 image_path = '../data/FLD_upper/';
 
@@ -28,13 +28,13 @@ for i = 1:length(name_list)
     img = imread(img_name);
     
     % forward
-    prediction = pipline_forword(img, pipline);
+    prediction = pipeline_forword(img, pipeline);
     
     
     % show result 
-    pipline_show_results(img, prediction);
+    pipeline_show_results(img, prediction);
     
 end
 
-% release pipline
-pipline_release;
+% release pipeline
+pipeline_release;

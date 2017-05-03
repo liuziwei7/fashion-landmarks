@@ -1,4 +1,4 @@
-function [  ] = pipline_show_results( img,prediction )
+function [  ] = pipeline_show_results( img,prediction )
 
     visibility_case = {'Visible','Occlude','Inexistent'};
     line_type = {'g*','bo','r^'};

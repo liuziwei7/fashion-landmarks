@@ -1,4 +1,7 @@
 ## Fashion Landmark Detection in the Wild
+Fashion landmarks are functional keypoints defined on clothes, such as corners of neckline, hemline and cuff. They have been recently introduced as an effective visual representation for fashion image understanding.
+Our Deep Fashion Alignment (DFA) takes clothes bounding box as input and predict both fashion landmark locations and visibility states.
+
 [[Project]](http://personal.ie.cuhk.edu.hk/~lz013/projects/FashionLandmarks.html) [[Paper]](https://arxiv.org/abs/1608.03049)   
 
 <img src='./misc/demo.gif' width=540>

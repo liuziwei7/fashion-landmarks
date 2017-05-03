@@ -1,4 +1,4 @@
-function [ prediction ] = pipline_forword( img_orig, pipline)
+function [ prediction ] = pipeline_forword( img_orig, pipeline)
 
     %% image resize & pad
 
@@ -32,38 +32,38 @@ function [ prediction ] = pipline_forword( img_orig, pipline)
     
     
     
-    get_orig_coordinate = @(p)((p+0.5)*224-repmat([offset(2),offset(1)]',[pipline.num_points,1]))/scale;
+    get_orig_coordinate = @(p)((p+0.5)*224-repmat([offset(2),offset(1)]',[pipeline.num_points,1]))/scale;
     visibility_case = {'Visible','Occlude','Inexistent'};
     
     %% stage 1 fp
-    res_stage1 = pipline.net_stage1.forward({img_stan});
-    landmark_stage1 = res_stage1{1}(1:pipline.num_points*2);
+    res_stage1 = pipeline.net_stage1.forward({img_stan});
+    landmark_stage1 = res_stage1{1}(1:pipeline.num_points*2);
     
-    [~,v1] = max(reshape(res_stage1{1}(1+pipline.num_points*2:end),3,pipline.num_points));
+    [~,v1] = max(reshape(res_stage1{1}(1+pipeline.num_points*2:end),3,pipeline.num_points));
     visibility_stage1 = visibility_case(v1);
     
     prediction_stage1 = struct('landmark',get_orig_coordinate(landmark_stage1),...
         'visibility',{visibility_stage1});
     
     %% stage 2 fp   
-    res_stage2 = pipline.net_stage2.forward({img_stan,landmark_stage1});
-    landmark_stage2 = landmark_stage1-res_stage2{1}(1:pipline.num_points*2)/5;
+    res_stage2 = pipeline.net_stage2.forward({img_stan,landmark_stage1});
+    landmark_stage2 = landmark_stage1-res_stage2{1}(1:pipeline.num_points*2)/5;
     
-    [~,v2] = max(reshape(res_stage2{1}(1+pipline.num_points*2:end),3,pipline.num_points));
+    [~,v2] = max(reshape(res_stage2{1}(1+pipeline.num_points*2:end),3,pipeline.num_points));
     visibility_stage2 = visibility_case(v2);
     
     prediction_stage2 = struct('landmark',get_orig_coordinate(landmark_stage2),...
         'visibility',{visibility_stage2});
     
     %% stage 3 fp
-    res_stage3_easy = pipline.net_stage3_easy.forward({img_stan,landmark_stage2});
-    res_stage3_hard = pipline.net_stage3_hard.forward({img_stan,landmark_stage2});
+    res_stage3_easy = pipeline.net_stage3_easy.forward({img_stan,landmark_stage2});
+    res_stage3_hard = pipeline.net_stage3_hard.forward({img_stan,landmark_stage2});
     landmark_stage3 = landmark_stage2 -...
-        (res_stage3_easy{1}(1:pipline.num_points*2)/5 ...
-        + res_stage3_hard{1}(1:pipline.num_points*2)/5)/2;
+        (res_stage3_easy{1}(1:pipeline.num_points*2)/5 ...
+        + res_stage3_hard{1}(1:pipeline.num_points*2)/5)/2;
     
-    [~,v3] = max(reshape(res_stage3_easy{1}(1+pipline.num_points*2:end)+...
-        res_stage3_hard{1}(1+pipline.num_points*2:end),3,pipline.num_points));
+    [~,v3] = max(reshape(res_stage3_easy{1}(1+pipeline.num_points*2:end)+...
+        res_stage3_hard{1}(1+pipeline.num_points*2:end),3,pipeline.num_points));
     visibility_stage3 = visibility_case(v3);
     
     prediction_stage3 = struct('landmark',get_orig_coordinate(landmark_stage3),...
@@ -74,7 +74,7 @@ function [ prediction ] = pipline_forword( img_orig, pipline)
     prediction = struct('stage1',prediction_stage1,...
                         'stage2',prediction_stage2,...
                         'stage3',prediction_stage3,...
-                        'num_points',pipline.num_points);
+                        'num_points',pipeline.num_points);
                     
                     
     
