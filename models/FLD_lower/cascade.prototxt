@@ -1,4 +1,4 @@
-name: "CaffeNet"
+name: "DFA_lower_cascade"
 layer {
   name: "data"
   type: "Input"
